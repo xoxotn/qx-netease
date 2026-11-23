@@ -1,0 +1,12 @@
+# 网易云 播放日志/统计上报 放行
+#
+# 作用：让 clientlog 系列域名强制直连，避免被「网易云音乐」策略组
+#       （代理节点失效、REJECT、或解锁灰色音乐的自建服务）连带影响，
+#       这是周报/月报出现空白的常见原因之一。
+#
+# 放置位置：放在你所有网易云分流规则之前（顺序靠前优先匹配）
+# Quantumult X 里最省事的做法：把本文件内容直接粘到配置文件的 [filter_local] 段最上面
+
+HOST-SUFFIX, clientlog.music.163.com, DIRECT
+HOST-SUFFIX, clientlog2.music.163.com, DIRECT
+HOST-SUFFIX, clientlog3.music.163.com, DIRECT
